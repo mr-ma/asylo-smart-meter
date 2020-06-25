@@ -56,8 +56,9 @@ public:
 };
 ```
 # Execution 
-- Setup Asylo as instructed in https://asylo.dev/docs/guides/quickstart.html 
+- Setup Asylo as instructed: https://asylo.dev/docs/guides/quickstart.html 
 - Clone this repo into your Asylo project path `${MY_PROJECT}`
+  ```git clone https://github.com/mr-ma/asylo-smart-meter ${MY_PROJECT}/smart-meter```
 - Compile and run the project by:
 ```
  docker run -it --rm     -v bazel-cache:/root/.cache/bazel     -v "${MY_PROJECT}":/opt/my-project     -w /opt/my-project     gcr.io/asylo-framework/asylo     bazel run --config=sgx-sim //smart_meter -- --usages="120,140" --period="peak"
