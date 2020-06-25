@@ -58,6 +58,7 @@ public:
 # Execution 
 - Setup Asylo as instructed: https://asylo.dev/docs/guides/quickstart.html 
 - Clone this repo into your Asylo project path `${MY_PROJECT}`
+
   ```git clone https://github.com/mr-ma/asylo-smart-meter ${MY_PROJECT}/smart-meter```
 - Compile and run the project by:
 ```
