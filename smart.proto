@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package smart_meter;
+
+import "asylo/enclave.proto";
+
+// Extension to EnclaveInput for use with Smart enclave.
+message SmartInput {
+  // optional string to_greet = 1;
+  repeated float kw_minute = 1;
+  enum Period {
+        Normal=0;
+        OffPeak=1;
+        Peak=2;
+  }
+  optional Period period = 2 [default=Normal];
+}
+
+message SmartOutput {
+  // optional string greeting_message = 1;
+  optional float counter = 1;
+}
+
+extend asylo.EnclaveInput {
+  optional SmartInput enclave_input_smart = 8086;
+}
+
+extend asylo.EnclaveOutput {
+  optional SmartOutput enclave_output_smart = 8087;
+}
